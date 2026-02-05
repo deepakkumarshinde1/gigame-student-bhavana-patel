@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: #f4f6f9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 200vh;
+      }
+
+      div {
+        width: 320px;
+        position: relative;
+      }
+
+      input {
+        width: 100%;
+        padding: 10px 12px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        outline: none;
+        transition: 0.3s;
+      }
+
+      input:focus {
+        border-color: #4a90e2;
+        box-shadow: 0 0 4px rgba(74, 144, 226, 0.4);
+      }
+
+      ul {
+        list-style: none;
+        margin: 4px 0 0;
+        padding: 0;
+        position: absolute;
+        width: 100%;
+        background: white;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        max-height: 200px;
+        overflow-y: auto;
+
+        z-index: 1000;
+      }
+
+      li {
+        padding: 10px;
+        cursor: pointer;
+        transition: 0.2s;
+      }
+
+      li:hover {
+        background: #f0f7ff;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <input type="text" />
+      <ul></ul>
+    </div>
+
+    <script src="./s5.js"></script>
+  </body>
+</html>
