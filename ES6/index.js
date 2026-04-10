@@ -81,7 +81,56 @@ let car = {
   [id]: 1000,
 };
 
+console.log(car[id]);
 console.log(Object.entries(car));
 
+console.clear();
 // Iterator
+let array5 = [10, 20, 30];
+let iterator = array5[Symbol.iterator]();
+console.log(iterator.next());
+console.log(iterator.next());
+console.log(iterator.next());
+console.log(iterator.next());
+
+// custom iterator
+let itr = {
+  data: [],
+  [Symbol.iterator]() {
+    let index = -1;
+    let _data = this.data;
+    return {
+      next() {
+        if (index === _data.length - 1) {
+          index = 0;
+        } else {
+          index++;
+        }
+        return { value: _data[index], done: false };
+      },
+      prev() {
+        if (index === -1) {
+          index = _data.length - 1;
+        } else {
+          index--;
+          if (index === -1) index = 0;
+        }
+        return { value: _data[index], done: false };
+      },
+    };
+  },
+};
+console.clear();
+
+itr.data = [10, 20];
+let myItr = itr[Symbol.iterator]();
+
+console.log(myItr.next());
+console.log(myItr.next());
+console.log(myItr.next());
+console.log(myItr.next());
+
 // Generators
+
+// redux thunk
+// redux saga
